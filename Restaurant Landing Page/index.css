@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  scroll-behavior: smooth;
+  
+  
+}
+::-webkit-scrollbar{
+  display: none;
+}
+nav{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: inherit;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: inherit;
+}
+.logo{
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  animation: neonAnim 2s alternate-reverse infinite;
+  color: #27DEDE;
+}
+.menuItem i{
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+}
+input[type=checkbox]{
+  display: none;
+}
+.links{
+  display: flex;
+  gap: 40px;
+}
+.links li{
+  list-style-type: none;
+}
+.links li a{
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+.active{
+  color: rgb(39, 222, 222);
+}
+.links li a::after{
+  content: '';
+  width: 0;
+  height: 2px;
+  display: block;
+  background-color: rgb(56, 239, 239);
+  transition: width .3s;
+}
+.links li a:hover::after{
+  width: 100%;
+}
+section::before,section::after{
+  content: '';
+  background:url('./images/top-view-fish-chips-plate-with-cutlery-copy-space.jpg') top no-repeat;
+  background-size: cover;
+  display: block;
+  filter: blur(1px);
+  position: absolute;
+  height: 110vh;
+  width: 100%;
+  top: 0;
+  z-index: -10;
+}
+section{
+  display: flex;
+  height: 110vh;
+  width: 100%;
+  align-items: center;
+  
+}
+.content{
+  padding: 0 7%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+}
+section h1{
+  font-size: 3.5em;
+  animation: neonAnim 2s alternate-reverse infinite;
+  color: #27DEDE;
+ 
+} 
+section p{
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  text-align: justify;
+  
+}
+
+section a{
+  text-decoration: none;
+  margin-top: 50px;
+  background-color: rgb(56, 239, 239);
+  padding: 10px 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: black; 
+  -webkit-box-shadow:0px 0px 176px 9px rgba(45,255,196,0.99);
+-moz-box-shadow: 0px 0px 176px 9px rgba(45,255,196,0.99);
+box-shadow: 0px 0px 176px 9px rgba(45,255,196,0.99);
+  
+}
+
+section a:hover{
+  background-color: aqua;
+}
+
+@media (max-width:900px) {
+  nav{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: black;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+  }
+  .menuItem i{
+    display: block;
+  }
+  #click:checked ~ .menuItem i:before{
+    content: '\f00d';
+  }
+  .links{
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 70px);
+    display: flex;
+    background-color: #111;
+    top: 70px;
+    left: -100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    transition: all .3s ease;
+  }
+  #click:checked ~ .links{
+    left: 0;
+  }
+  .links li{
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  .links li a{
+    margin-left: -100%;
+    transition:all .6s  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  }
+  #click:checked ~ .links li a{
+    margin-left: 0;
+  }
+  section{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .content{
+    padding: 0 7%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+  }
+  section h1{
+    text-align: center;
+    font-size: 1.8em;
+    animation: neonAnim 2s alternate-reverse infinite;
+    color: #27DEDE;
+   
+  } 
+  section span{
+    text-align: center;
+  }
+
+
+
+
+}
+
